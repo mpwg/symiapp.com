@@ -10,18 +10,38 @@ Statische Landingpage für Symi. Die Seite lädt keine externen Ressourcen nach:
 
 ## Cloudflare Pages
 
-Das Cloudflare Pages Projekt heißt `symiapp-com` und verwendet die Konfiguration aus
-[../wrangler.jsonc](/Users/mat/code/Symi/wrangler.jsonc).
+Das Cloudflare Pages Projekt heißt `symiapp-com`. Die Pages-Konfiguration liegt in
+[`wrangler.jsonc`](wrangler.jsonc), damit der statische Output eindeutig versioniert ist.
 
-Für Cloudflare Pages kann dieses Verzeichnis als statischer Output verwendet werden:
+### Build Settings
 
 ```text
-semiapp.com
+Framework preset: None
+Build command: leer lassen
+Build output directory: /
+Root directory: /
+Production branch: main
+Preview deployments: All branches
 ```
 
-Build command leer lassen oder auf `None` setzen. Das Output-Verzeichnis ist `semiapp.com`, wenn aus dem Repository-Root deployed wird.
+Da die Website aus statischen HTML-, CSS- und Asset-Dateien im Repository-Root besteht, ist kein
+Build-Schritt nötig. `pages_build_output_dir` zeigt deshalb auf `./`.
 
-Die einmalige Einrichtung für GitHub-Integration, Preview Deployments und `symiapp.com` ist in
-[docs/Cloudflare-Pages.md](/Users/mat/code/Symi/docs/Cloudflare-Pages.md) dokumentiert.
+### Automatisches Deployment
+
+Cloudflare Pages ist mit `mpwg/symiapp.com` verbunden. Pushes auf `main` erzeugen Production
+Deployments, andere Branches erzeugen Preview Deployments.
+
+Die Domain `symiapp.com` läuft über Cloudflare DNS und ist als Custom Domain für das Pages-Projekt
+vorgesehen. Der DNS-Eintrag für die Apex-Domain muss auf das Pages-Subdomain-Ziel zeigen:
+
+```text
+Type: CNAME
+Name: @
+Target: symiapp-com.pages.dev
+Proxy status: Proxied
+```
+
+HTTPS wird von Cloudflare Pages automatisch bereitgestellt, sobald die Domain validiert ist.
 
 Vor Veröffentlichung müssen die Platzhalter in `impressum.html` und `support.html` ergänzt werden.
