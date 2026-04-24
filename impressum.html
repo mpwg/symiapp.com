@@ -11,27 +11,59 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <header class="site-header" aria-label="Hauptnavigation">
-      <a class="brand" href="/"><img src="/assets/icon-1024.png" alt="" width="44" height="44"><span>Symi</span></a>
-      <nav class="nav-links" aria-label="Seitennavigation">
-        <a href="/#funktionen">Funktionen</a>
-        <a href="/privacy/">Datenschutz</a>
-        <a href="/support.html">Support</a>
-      </nav>
-    </header>
-    <main class="simple-page">
-      <p class="eyebrow">Impressum</p>
-      <h1>Angaben gemäß ECG.</h1>
-      <div class="simple-card">
-        <p><strong>Betreiber:</strong> Bitte vor Veröffentlichung ergänzen.</p>
-        <p><strong>Anschrift:</strong> Bitte vor Veröffentlichung ergänzen.</p>
-        <p><strong>E-Mail:</strong> Bitte vor Veröffentlichung ergänzen.</p>
-      </div>
-      <h2>Hinweis</h2>
-      <p>
-        Diese Seite enthält Platzhalter für die rechtlich erforderlichen Angaben. Vor dem Deployment
-        auf symiapp.com müssen die Betreiber- und Kontaktdaten vollständig ergänzt werden.
-      </p>
-    </main>
+    <div class="page subpage">
+      <header class="header" aria-label="Hauptnavigation">
+        <div class="container nav">
+          <a href="/" aria-label="Symi Startseite">
+            <img class="logo" src="/assets/logo.webp" alt="Symi" />
+          </a>
+          <nav class="nav-links" aria-label="Seitennavigation">
+            <a href="/#funktionen">Funktionen</a>
+            <a href="/privacy/">Datenschutz</a>
+            <a href="/support.html">Support</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="content-page">
+        <section class="content-hero" aria-labelledby="imprint-title">
+          <div class="container content-layout">
+            <div>
+              <p class="eyebrow">Impressum</p>
+              <h1 id="imprint-title">Angaben gemäß ECG<span class="accent-dot">.</span></h1>
+            </div>
+            <article class="card content-card">
+              <p><strong>Betreiber:</strong> Bitte vor Veröffentlichung ergänzen.</p>
+              <p><strong>Anschrift:</strong> Bitte vor Veröffentlichung ergänzen.</p>
+              <p><strong>E-Mail:</strong> Bitte vor Veröffentlichung ergänzen.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="imprint-note-title">
+          <div class="container content-narrow">
+            <h2 id="imprint-note-title">Hinweis</h2>
+            <p>
+              Diese Seite enthält Platzhalter für die rechtlich erforderlichen Angaben. Vor dem Deployment
+              auf symiapp.com müssen die Betreiber- und Kontaktdaten vollständig ergänzt werden.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>symiapp.com</strong>
+            <p>Symi – Migräne Tagebuch für mehr gute Tage.</p>
+          </div>
+          <nav class="footer-links" aria-label="Footer Navigation">
+            <a href="/impressum.html">Impressum</a>
+            <a href="/privacy/">Datenschutz</a>
+            <a href="/support.html">Support</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
